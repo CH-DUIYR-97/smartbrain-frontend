@@ -1,0 +1,40 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem; 
+  box-sizing: border-box; 
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+body {
+  background: linear-gradient(to right, #2a0845, #6441a5);
+  color: #f4f4f4;
+  font-family: 'Courier New', Courier, monospace;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.signout-button {
+  transition: all 0.2s ease;
+}
+
+.signout-button:hover {
+  color: #FFD700; 
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
