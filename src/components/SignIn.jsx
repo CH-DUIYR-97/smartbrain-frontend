@@ -47,14 +47,13 @@ function SignIn({ onRouteChange, loadUser }) {
               />
             </div>
           </fieldset>
-          <div className="">
+          <form onSubmit={(e) => { e.preventDefault(); onSubmitSignIn(); }}>
             <input
-              onClick={onSubmitSignIn}
               className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
               type="submit"
               value="Sign in"
             />
-          </div>
+          </form>
           <div className="lh-copy mt3">
             <p
               onClick={() => onRouteChange('register')}
