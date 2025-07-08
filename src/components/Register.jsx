@@ -6,26 +6,27 @@ function Register({ onRouteChange, loadUser }) {
   const [registerName, setRegisterName] = useState('');
 
   const onSubmitRegister = () => {
-    fetch('http://localhost:3001/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: registerEmail,
-        password: registerPassword,
-        name: registerName
-      })
+  fetch('https://smartbrain-backend-s1jo.onrender.com/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: registerEmail,
+      password: registerPassword,
+      name: registerName
     })
-      .then(response => response.json())
-      .then(user => {
-        if (user.id) {
-          loadUser(user);
-          onRouteChange('home');
-        } else {
-          alert('Unable to register');
-        }
-      })
-      .catch(err => console.log(err));
-  };
+  })
+    .then(response => response.json())
+    .then(user => {
+      console.log('Register response:', user);
+      if (user.id) {
+        loadUser(user);
+        onRouteChange('home');
+      } else {
+        alert('Unable to register');
+      }
+    })
+    .catch(err => console.log(err));
+};
 
   return (
     <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
